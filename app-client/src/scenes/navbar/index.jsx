@@ -40,15 +40,15 @@ const NavBar = () => {
     const primaryLight = theme.palette.primary.light;
     const alt = theme.palette.background.alt;
 
-    // const fullName = `${user.firstName} ${user.lastName}`
-    const fullName = `Wenuka 123`
+    const fullName = `${user.firstName} ${user.lastName}`
+    // const fullName = `Wenuka 123`
     return (<FlexBetween padding="1rem 6%" backgroundColor={alt}>
         <FlexBetween gap="1.75rem">
             <Typography fontWeight="bold" fontSize="clamp(1rem,2rem,2.25rem)" color="primary" onClick={() => navigate("/home")} sx={{
                 "&:hover": {
                     color: primaryLight, cursor: "pointer",
                 },
-            }}></Typography>
+            }}>ChatYou</Typography>
             {isNonMobileScreens && (<FlexBetween backgroundColor={neutralLight} borderRadius="9px" gap="3rem" padding="0.1rem 1.5rem">
                 <InputBase placeholder='Search...' />
                 <IconButton>
@@ -83,7 +83,7 @@ const NavBar = () => {
                     <MenuItem value={fullName}>
                         <Typography>{fullName}</Typography>
                     </MenuItem>
-                    <MenuItem onClick={() => { dispatch(setLogout()) }}>
+                    <MenuItem onClick={() => { dispatch(setLogout()); navigate("/") }}>
                         Logout
                     </MenuItem>
                 </Select>
@@ -132,7 +132,7 @@ const NavBar = () => {
                             <MenuItem value={fullName}>
                                 <Typography>{fullName}</Typography>
                             </MenuItem>
-                            <MenuItem onClick={() => { dispatch(setLogout()) }}>
+                            <MenuItem onClick={() => { dispatch(setLogout()); navigate("/") }}>
                                 Logout
                             </MenuItem>
                         </Select>
