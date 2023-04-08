@@ -43,6 +43,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
                 <Box
                     onClick={() => {
                         navigate(`/profile/${friendId}`);
+                        // TODO: Fix this proper way
                         navigate(0);
                     }}
                 >
